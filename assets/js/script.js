@@ -17,21 +17,27 @@ function cityInput(event) {
         activeCityVal = data['name']
         activeTempVal = data['main']['temp']
         activeWindVal = data['wind']['speed']
-        activeHumidityVal = data['main']['humidity']
-        iconVal = data['weather'][0]['icon']
+        activeHumiVal = data['main']['humidity']
+        weathrIconVal = data['weather'][0]['icon']
 
-        $("#actCity") = activeCityVal;
-        $("#temp") = activeTempVal
-        $("#wind") = Math.trunc(activeWindVal)
-        $("#humidity") = Math.trunc(activeHumidityVal)
-        $("#weatherIcon") = iconVal
+        // $("#actCity") = activeCityVal;
+        // $("#temp") = activeTempVal
+        activeWindVal = Math.trunc(activeWindVal)
+        activeHumiVal = Math.trunc(activeHumiVal)
 
         // Kelvin to °F convertion
-        $("#temp") = (($("#temp") - 273.15) * 1.8) + 32;
-        $("#temp") = Math.trunc($("#temp"))
+        activeTempVal = ((activeTempVal - 273.15) * 1.8) + 32;
+        activeTempVal = Math.trunc(activeTempVal)
 
         //Display fetch data
-        $("#actCity").text(" " + $("#actCity"))
+        $("#actCity").text(" " + activeCityVal)
+        $('#temp').text(" " + (activeTempVal) + '°F');
+        $("#humidity").text(" " + activeHumiVal + "%");
+        $("#wind").text(" " + activeWindVal + "mph");
+        $(".weatherIcon").attr(
+            "src",
+            " http://openweathermap.org/img/wn/" + weathrIconVal +"@2x.png" 
+        );
 
     });
 
