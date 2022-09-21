@@ -14,6 +14,7 @@ lastCity.forEach(city => {
 function cityInput(event) {
     console.log(event)
 
+    // Local storage display
     city = $("#inputCity").val().trim()
     lastCity.push(city)
     historyList = $(`<li class="list-group-item list-group-item-secondary" id="work">${city}</li>`);
@@ -119,5 +120,14 @@ function cityInput(event) {
     });
 }
 
+// Function to clear History
+function deleteHistory (event) {
+    console.log(event)
+    pastCity = []
+    localStorage.removeItem("lastCity");
+    document.location.reload();
+}
+
 // Calling functions
+$("#clearHistory").on("click", deleteHistory);
 $("#searchBtn").on("click", cityInput);
