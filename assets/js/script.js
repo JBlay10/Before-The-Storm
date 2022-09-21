@@ -106,9 +106,9 @@ function cityInput(event) {
                         
                         // Display content in 5 day forecast (not displaying)
                         $("#date" + days).text(date);
-                        $("#temp" + days).text(futureTemp);
-                        $("#humidity" + days).text(futureHum);
-                        $("#wind" + days).text(futureWind);
+                        $("#temp" + days).text(" " + (futureTemp) + "°F");
+                        $("#humidity" + days).text(" " + futureHum + "%");
+                        $("#wind" + days).text(" " + futureWind + "mph");
                         $(".weatherIcon" + days).attr(
                             "src",
                             "http://openweathermap.org/img/wn/" + icon +"@2x.png" 
@@ -121,7 +121,7 @@ function cityInput(event) {
 }
 
 // Function to clear History
-function deleteHistory (event) {
+function deleteHistory(event) {
     console.log(event)
     pastCity = []
     localStorage.removeItem("lastCity");
