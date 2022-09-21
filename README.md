@@ -4,7 +4,7 @@ A website that tracks the weather, it will give you your active/present forecast
 
 ## Screenshot
 
-![B4theStorm]()
+![B4theStorm](./assets/img/B4theStormWeb.png)
 
 ## URL for live
 
